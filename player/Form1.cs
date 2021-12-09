@@ -403,13 +403,17 @@ namespace player
         {
             if(listBox_songs != null)
             {
-                for (int i = 0; i < listBox_songs.SelectedItems.Count; i++)
+                try
                 {
-                    listBox_songs.Items.Remove(listBox_songs.SelectedItems[i]);
-                }
+                    for (int i = 0; i < listBox_songs.SelectedItems.Count; i++)
+                    {
+                        listBox_songs.Items.Remove(listBox_songs.SelectedItems[i]);
+                    }
                    
-                waveOut.Stop();
-                timer1.Stop();
+                    waveOut.Stop();
+                    timer1.Stop();
+                }
+                catch{}
             }
 
         }
